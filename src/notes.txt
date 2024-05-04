@@ -1,0 +1,76 @@
+text:
+    cats and dogs are good companions.
+    Everyone hates a mouse
+
+    |: one of these options
+        regex:'cat|dog|mouse'
+    .:matches any character
+    +: at least once for a single character
+    ?: at most once for a single character
+    *: zero or more times for a single character
+
+    'g.*t'
+        gt
+        ghsusjst
+        gut
+        giutyrt
+
+    'g.+t'
+        gut
+        guit
+        gt // this is not valid because there should be a at least one character before t
+
+    'g.?t'
+        gyt
+        gut
+        got
+        gdwnt // this is not valid, the character between ga dn t should be maximum once.
+
+  positional character
+
+    ^ : at the start of the string
+        '^hello' // the word should START with hello
+    $ : at the end of the string
+        'world$' // the word should END with hello
+
+  shorcuts characters
+
+    \d: a digit 0-9
+    \D: non -digit
+    \w: a word: a - z,0-9
+    \W: non word
+    \s: whitespace
+    \S: non-white space
+
+    repetition
+
+    {exactly}
+    {min,}
+    {,max}
+    {min,max}
+        'g.{1,3}p'
+        gap
+        gaaaaap=> invalid
+        gip
+        gop
+        gooop
+        goooop => invalid
+
+    []: one of these options
+        'g[aeiou]+t'
+            match any vowel
+            git
+            get
+            gooot
+            gut
+            gat
+
+
+    get all words with at least 4 vowels
+        \w{4}\s{1}
+    get all words with at least 4 vowels
+        [aeiou]
+
+
+
+
